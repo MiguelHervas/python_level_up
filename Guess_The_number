@@ -3,10 +3,11 @@ import random
 print("Try to guess the number I am thinking of")
 computer_number = random.randint(0, 100)
 guessed = False
+guess_tries = 0
 while not guessed:
-
     print("Give me a number from 0 to 100")
     user_number = input()
+    guess_tries = guess_tries + 1
     if user_number.isnumeric():
         user_number = int(user_number)
         if user_number == computer_number:
@@ -18,3 +19,4 @@ while not guessed:
             print("the number is smaller")
     else:
         print("am I a joke to you?")
+print("you guess the number in " + str(guess_tries) + " tries, congratulations!")
